@@ -7,7 +7,6 @@ import com.example.demo.controller.TransactionStatus;
 import com.example.demo.repository.AccountRepository;
 import com.example.demo.services.exceptions.InsufficientBalanceException;
 import com.example.demo.services.model.response.BalanceResponse;
-import com.example.demo.services.model.response.TransactionResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
