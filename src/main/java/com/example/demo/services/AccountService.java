@@ -22,7 +22,7 @@ public class AccountService {
     }
 
     public BankAccount deposit(final Long accountNumber, final DepositTransaction depositTransaction) throws InsufficientBalanceException {
-        BankAccount account = accountRepository.getAccountByAccountNumber(accountNumber);
+        final BankAccount account = accountRepository.getAccountByAccountNumber(accountNumber);
         if (account != null) {
             account.post(depositTransaction);
             return accountRepository.save(account);
@@ -31,7 +31,7 @@ public class AccountService {
     }
 
     public BankAccount withdraw(final Long accountNumber, final WithdrawalTransaction withdrawalTransaction) throws InsufficientBalanceException {
-        BankAccount account = accountRepository.getAccountByAccountNumber(accountNumber);
+        final BankAccount account = accountRepository.getAccountByAccountNumber(accountNumber);
         if (account != null) {
             account.post(withdrawalTransaction);
             return accountRepository.save(account);
@@ -41,7 +41,7 @@ public class AccountService {
     }
 
     public BalanceResponse getBalance(final Long accountNumber) {
-        BankAccount account = accountRepository.getAccountByAccountNumber(accountNumber);
+        final BankAccount account = accountRepository.getAccountByAccountNumber(accountNumber);
 
         final BalanceResponse response = new BalanceResponse();
         response.setStatus(TransactionStatus.OK);
